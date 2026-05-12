@@ -30,6 +30,15 @@ export default function Auth() {
     else setSent(true);
   }
 
+  async function signInWithGoogle() {
+    setError(null);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin + '/auth/callback' },
+    });
+    if (error) setError("couldn't open google sign-in. try again.");
+  }
+
   return (
     <div className="col" style={{ padding: 'var(--s-6) 0' }}>
       <Wordmark size={22} />
@@ -45,31 +54,48 @@ export default function Auth() {
           link sent. check your email.
         </div>
       ) : (
-        <form onSubmit={submit}>
-          <label className="upper" style={{ display: 'block', marginBottom: 'var(--s-1)' }}>email</label>
-          <input
-            type="email"
-            autoFocus
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@somewhere"
-            style={{
-              width: '100%',
-              border: 0,
-              borderBottom: '1px solid var(--ink)',
-              padding: 'var(--s-2) 0',
-              fontSize: 'var(--t-section)',
-              background: 'transparent',
-              outline: 'none',
-            }}
-          />
-          <div style={{ marginTop: 'var(--s-3)', textAlign: 'center' }}>
-            <button type="submit" className="btn" disabled={busy || !email.trim()}>
-              {busy ? 'sending ...' : 'send link'}
+        <>
+          <form onSubmit={submit}>
+            <label className="upper" style={{ display: 'block', marginBottom: 'var(--s-1)' }}>email</label>
+            <input
+              type="email"
+              autoFocus
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@somewhere"
+              style={{
+                width: '100%',
+                border: 0,
+                borderBottom: '1px solid var(--ink)',
+                padding: 'var(--s-2) 0',
+                fontSize: 'var(--t-section)',
+                background: 'transparent',
+                outline: 'none',
+              }}
+            />
+            <div style={{ marginTop: 'var(--s-3)', textAlign: 'center' }}>
+              <button type="submit" className="btn" disabled={busy || !email.trim()}>
+                {busy ? 'sending ...' : 'send link'}
+              </button>
+            </div>
+          </form>
+
+          <div className="divider" aria-hidden style={{ margin: 'var(--s-4) 0' }}>
+            ·  ·  ·   or   ·  ·  ·
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <button type="button" className="btn" onClick={signInWithGoogle}>
+              continue with google
             </button>
           </div>
-          {error && <div style={{ color: 'var(--accent)', marginTop: 'var(--s-2)', fontSize: 'var(--t-micro)', textAlign: 'center' }}>{error}</div>}
-        </form>
+
+          {error && (
+            <div style={{ color: 'var(--accent)', marginTop: 'var(--s-3)', fontSize: 'var(--t-micro)', textAlign: 'center' }}>
+              {error}
+            </div>
+          )}
+        </>
       )}
     </div>
   );
