@@ -104,6 +104,10 @@ export default function Landing() {
       <div style={{ textAlign: 'center', marginTop: 'var(--s-4)' }}>
         <Link className="btn" to="/auth">sign in</Link>
       </div>
+
+      <div className="upper" style={{ textAlign: 'center', marginTop: 'var(--s-4)' }}>
+        <Link to="/about" style={{ color: 'var(--muted)' }}>about</Link>
+      </div>
     </div>
   );
 }

@@ -19,11 +19,13 @@ export default function Nav() {
         { label: 'lists',   to: '/lists' },
         { label: 'saved',   to: '/saved' },
         { label: 'inbox',   to: '/notifications', badge: unread },
+        { label: 'about',   to: '/about', muted: true },
         { label: 'out',     action: async () => { await signOut(); navigate('/'); }, muted: true },
       ]
     : [
         { label: 'feed',    to: '/', exact: true },
         { label: 'search',  to: '/search' },
+        { label: 'about',   to: '/about', muted: true },
         { label: 'sign in', to: '/auth' },
       ];
 

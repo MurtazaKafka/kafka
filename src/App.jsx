@@ -24,6 +24,7 @@ const Lists          = lazy(() => import('./pages/Lists.jsx'));
 const ListPage       = lazy(() => import('./pages/List.jsx'));
 const Saved          = lazy(() => import('./pages/Saved.jsx'));
 const Notifications  = lazy(() => import('./pages/Notifications.jsx'));
+const About          = lazy(() => import('./pages/About.jsx'));
 const NotFound       = lazy(() => import('./pages/NotFound.jsx'));
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
               <Route path="/list/:id"           element={<ListPage />} />
               <Route path="/saved"              element={<Saved />} />
               <Route path="/notifications"      element={<Notifications />} />
+              <Route path="/about"              element={<About />} />
               <Route path="/:username"          element={<ProfileGate Profile={Profile} />} />
               <Route path="*"                   element={<NotFound />} />
             </Routes>
