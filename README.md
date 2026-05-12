@@ -6,7 +6,10 @@ are the product.
 
 → **Live:** https://kafka-prototype.vercel.app/
 → **About:** [`/about`](https://kafka-prototype.vercel.app/about)
+→ **Walkthrough:** https://youtu.be/z-H_hYhExLk
 → **Repo:** https://github.com/MurtazaKafka/kafka
+
+![Kafka landing page — wordmark, hand talisman, featured editorial review in a pixel frame](docs/landing.png)
 
 ---
 
@@ -153,13 +156,24 @@ In the Supabase SQL editor, run in order:
    `@kafka` (requires that profile to exist first; sign in once with
    username `kafka` before running)
 
+## Screens
+
+![The editor — plaintext writing surface with a book header at top and a fixed status bar at the bottom](docs/editor.png)
+
+*The editor. Plaintext only. No toolbar.*
+
+![Editorial feed tab showing the curator's reviews of Solaris and The Left Hand of Darkness](docs/feed-editorial.png)
+
+*Editorial tab. Hand-curated picks under `@kafka`. Selections inspired by [Five Books](https://fivebooks.com); prose written for Kafka.*
+
 ## Deliverables
 
 - **Live project:** see top of README
 - **About page in the app:** `/about`
 - **Source:** this repo
-- **Video walkthrough:** `docs/walkthrough.mp4` *(recorded separately)*
-- **Design layouts:** *(Figma link — paste here when posting)*
+- **Video walkthrough:** [youtu.be/z-H_hYhExLk](https://youtu.be/z-H_hYhExLk)
+- **Pitch deck (Google Slides):** [open](https://docs.google.com/presentation/d/1AJMNsMirE8fHuBGIN2zH76t69K-M9hSr/edit?usp=sharing&ouid=103609517853786781199&rtpof=true&sd=true)
+- **Design layouts (moodboard Google Doc):** [open](https://docs.google.com/document/d/1kBKlhEN4einUJTJ1T8MGNxqihH2D3OTxIBhl6nOMsWI/edit?usp=sharing)
 - **Updated proposal:** this README is the updated proposal
 
 ## Attribution
